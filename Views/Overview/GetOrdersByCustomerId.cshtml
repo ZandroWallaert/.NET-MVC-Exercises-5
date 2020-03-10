@@ -1,0 +1,21 @@
+@model IEnumerable<northwind_mvc_i.Library.Models.Orders>
+
+<h1>Orders</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(Model => Model.OrderDate)</th>
+            <th>@Html.DisplayNameFor(Model => Model.ShipAddress)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var order in Model){
+            <tr>
+                <td>@order.OrderDate</td>
+                <td>@order.ShipAddress</td>
+            </tr>
+        }
+    </tbody>
+    <p><a href="https://localhost:5001/">Back</a></p>
+</table>

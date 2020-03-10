@@ -1,0 +1,22 @@
+﻿@model IEnumerable<northwind_mvc_i.Library.Models.Customers>
+<h1>Customers</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(Model => Model.ContactName)</th>
+            <th>@Html.DisplayNameFor(Model => Model.City)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var customer in Model){
+            <tr>
+                <td>@customer.ContactName</td>
+                <td>@customer.City</td>
+                <td><a asp-controller="Overview"
+                asp-action="GetOrdersByCustomerId"
+                asp-route-costumerId="@customer.CustomerId">Orders</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
